@@ -35,6 +35,19 @@
             </tbody>
         </table>
     @endif
+
+    @foreach ($users as $user)
+        <p>User: {{ $user->name }}</p>
+        <p>Phone: {{ $user->phone->number ?? 'No phone' }}</p>
+
+        <h4>Posts:</h4>
+        <ul>
+            @foreach ($user->posts as $post)
+                <li>{{ $post->title }}</li>
+            @endforeach
+        </ul>
+    @endforeach
+
 </body>
 
 </html>

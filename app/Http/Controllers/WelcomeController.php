@@ -8,7 +8,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $users = User::with('phone')->get();
+        $users = User::with('phone', 'posts')->get();
         return view('welcome', compact('users'));
     }
 }
